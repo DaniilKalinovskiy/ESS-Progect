@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RouterModule} from '@angular/router';
+import {ProfileComponent} from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponentComponent,
-    LoginComponentComponent
+    LoginComponentComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import { RouterModule} from '@angular/router';
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: 'register', component: RegistrationComponentComponent },
       { path: 'login', component: LoginComponentComponent },
-
+      {path: 'profile', component: ProfileComponent }
 
     ])
   ],

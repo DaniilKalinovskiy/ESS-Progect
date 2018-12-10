@@ -1,0 +1,15 @@
+.profile-info-general {
+  position: relative;
+  padding: 2%;
+  height: 70%;
+}
+.profile-picture {
+  width: 30%;
+  float: left;
+}
+
+.profile-info {
+  width: 70%;
+  float: right;
+
+}
