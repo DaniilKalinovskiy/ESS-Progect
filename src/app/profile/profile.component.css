@@ -1,15 +1,48 @@
+body {
+  background-color: whitesmoke;
+}
+
 .profile-info-general {
   position: relative;
-  padding: 2%;
+  padding: 1%;
   height: 70%;
 }
-.profile-picture {
-  width: 30%;
+#leftBlock {
+  width: 20%;
   float: left;
+}
+#rightBlock {
+  width: 75%;
+  float: right;
+  margin-left: 5%;
+}
+
+.profile-picture {
+  width: 28%;
+  float: left;
+  max-width: 30%;
+  padding: 1%;
+  background-color: white;
+}
+
+.avatar {
+  width: 100%;
+}
+
+.Name {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 28px;
 }
 
 .profile-info {
-  width: 70%;
+  width: 67%;
+  margin-left: 1%;
   float: right;
+  padding: 1%;
+  background-color: white;
+}
 
+#details {
+  color: gainsboro;
+  align-content: center;
 }
