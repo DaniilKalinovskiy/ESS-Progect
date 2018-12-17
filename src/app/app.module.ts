@@ -9,13 +9,15 @@ import { RegistrationComponentComponent } from './registration-component/registr
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RouterModule} from '@angular/router';
 import {ProfileComponent} from './profile/profile.component';
+import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponentComponent,
     LoginComponentComponent,
-    ProfileComponent
+    ProfileComponent,
+    NavigationbarComponent
   ],
   imports: [
     BrowserModule,
