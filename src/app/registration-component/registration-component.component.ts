@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {register} from 'ts-node';
-
+import * as fs from 'fs-web';
 @Component({
   selector: 'app-registration-component',
   templateUrl: './registration-component.component.html',
   styleUrls: ['./registration-component.component.css']
 })
 export class RegistrationComponentComponent implements OnInit {
-    private fs = require('fs');
 
     constructor() { }
 
@@ -18,8 +16,7 @@ export class RegistrationComponentComponent implements OnInit {
        date: document.getElementsByName('date'),
     };
     register() {
-
-        this.fs.writeFile('person.json', JSON.stringify(this.person),  function(err) {
+        fs.writeFile('person.json', JSON.stringify(this.person),  function(err) {
             if (err) {
                 return console.error(err);
             }
