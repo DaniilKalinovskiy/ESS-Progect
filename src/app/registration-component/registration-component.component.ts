@@ -13,6 +13,6 @@ export class RegistrationComponentComponent implements OnInit {
   }
 
   register() {
-
+      console.log(JSON.stringify(name));
   }
 }

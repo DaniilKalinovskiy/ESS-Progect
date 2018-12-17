@@ -6,16 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-fName = 'Даниил';
-lName = 'Калиновский';
+nickname = 'Даниил';
 age = '20';
 email = 'daniilkalinovskiy@gmail.com';
-sotialNetworks = 'https://vk.com/daniilkalinovskyi';
 hobbies = 'reading';
-city = 'Одесса';
-region = 'Одесская обл.';
-country = 'Украина';
-avatarSRC = 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2012/12/11/20/pg-24-avatar-1-capital.jpg?w968h681';
+avatarSRC = 'https://zabavnik.club/wp-content/uploads/Kartinki_hd_na_telefon_3_08200519.jpg';
   constructor() { }
 
   ngOnInit() {
