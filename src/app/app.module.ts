@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyMaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
     NavigationbarComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

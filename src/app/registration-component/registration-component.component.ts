@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import * as fs from 'fs-web';
 @Component({
   selector: 'app-registration-component',
   templateUrl: './registration-component.component.html',
   styleUrls: ['./registration-component.component.css']
 })
+@Injectable()
 export class RegistrationComponentComponent implements OnInit {
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
    private person = {
-       nickname : document.getElementsByName('name'),
+       firstName : document.getElementsByName('fName'),
+       lastName : document.getElementsByName('lName'),
        email : document.getElementsByName('email'),
        password : document.getElementsByName('password'),
        date: document.getElementsByName('date'),
@@ -23,6 +27,7 @@ export class RegistrationComponentComponent implements OnInit {
             console.log('File created!');
         });
     }
+
 
 
   ngOnInit() {
