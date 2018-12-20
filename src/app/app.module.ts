@@ -6,7 +6,7 @@ import { MyMaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegistrationComponentComponent } from './registration-component/registration-component.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RouterModule} from '@angular/router';
 import {ProfileComponent} from './profile/profile.component';
@@ -15,7 +15,7 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponentComponent,
+    RegistrationComponent,
     LoginComponentComponent,
     ProfileComponent,
     NavigationbarComponent
@@ -28,7 +28,7 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
     MyMaterialModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/login', pathMatch: 'full' },
-      { path: 'register', component: RegistrationComponentComponent },
+      { path: 'register', component: RegistrationComponent },
       { path: 'login', component: LoginComponentComponent },
       {path: 'profile', component: ProfileComponent }
 

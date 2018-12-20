@@ -2,32 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as fs from 'fs-web';
+import {RegistrationService} from './registranion.service';
 @Component({
   selector: 'app-registration-component',
-  templateUrl: './registration-component.component.html',
-  styleUrls: ['./registration-component.component.css']
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
 @Injectable()
-export class RegistrationComponentComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
+    private registrationService: RegistrationService;
 
     constructor(private http: HttpClient) { }
 
-   private person = {
+    person = {
        firstName : document.getElementsByName('fName'),
        lastName : document.getElementsByName('lName'),
        email : document.getElementsByName('email'),
        password : document.getElementsByName('password'),
        date: document.getElementsByName('date'),
     };
-    register() {
-        fs.writeFile('person.json', JSON.stringify(this.person),  function(err) {
-            if (err) {
-                return console.error(err);
-            }
-            console.log('File created!');
-        });
-    }
 
+    register() {
+        this.registrationService.addPerson(this.person)
+            .subscribe(person => this.person.push(person));
+    }
 
 
   ngOnInit() {
