@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import * as fs from 'fs-web';
-import {RegistrationService} from './registranion.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+
 @Component({
   selector: 'app-registration-component',
   templateUrl: './registration.component.html',
@@ -10,7 +9,10 @@ import {RegistrationService} from './registranion.service';
 })
 @Injectable()
 export class RegistrationComponent implements OnInit {
-    private registrationService: RegistrationService;
+    config = {
+        registrationUrl: 'registrationUrl',
+        textFile:  'textFile'
+    };
 
     constructor(private http: HttpClient) { }
 
@@ -22,8 +24,19 @@ export class RegistrationComponent implements OnInit {
         {date: document.getElementsByName('date')}
     ];
 
+    httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': 'my-auth-token'
+        })
+    };
+
+    addPerson(person: any[]) {
+        return this.http.post(this.config.registrationUrl, person, this.httpOptions);
+    }
+
     register() {
-        this.registrationService.addPerson(this.person)
+        this.addPerson(this.person)
             .subscribe(person => this.person.push(person));
     }
 
