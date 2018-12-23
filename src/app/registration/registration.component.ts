@@ -14,13 +14,13 @@ export class RegistrationComponent implements OnInit {
 
     constructor(private http: HttpClient) { }
 
-    person = {
-       firstName : document.getElementsByName('fName'),
-       lastName : document.getElementsByName('lName'),
-       email : document.getElementsByName('email'),
-       password : document.getElementsByName('password'),
-       date: document.getElementsByName('date'),
-    };
+    person: any[] = [
+        {firstName : document.getElementsByName('fName')},
+        {lastName : document.getElementsByName('lName')},
+        {email : document.getElementsByName('email')},
+        {password : document.getElementsByName('password')},
+        {date: document.getElementsByName('date')}
+    ];
 
     register() {
         this.registrationService.addPerson(this.person)
