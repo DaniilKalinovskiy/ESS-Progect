@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login-component',
@@ -6,13 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-component.component.css']
 })
 export class LoginComponentComponent implements OnInit {
+  user: any [] = [
+      {email : document.getElementsByName('email')},
+     {password : document.getElementsByName('password')}
+  ];
 
-  constructor() { }
+  httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': 'my-auth-token'
+        })
+  };
+
+    config = {
+        registrationUrl: 'registrationUrl',
+        textFile:  'textFile'
+    };
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  login() {
+    addUser(user: any[]) {
+        return this.http.post(this.config.registrationUrl, user, this.httpOptions);
+    }
 
-  }
+    login() {
+        this.addUser(this.user)
+            .subscribe(user => this.user.push(user));
+    }
 }

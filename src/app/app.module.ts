@@ -11,6 +11,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { RouterModule} from '@angular/router';
 import {ProfileComponent} from './profile/profile.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
+import { ProfileeditComponent } from './profileedit/profileedit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
     RegistrationComponent,
     LoginComponentComponent,
     ProfileComponent,
-    NavigationbarComponent
+    NavigationbarComponent,
+    ProfileeditComponent
   ],
   imports: [
     HttpClientModule,
