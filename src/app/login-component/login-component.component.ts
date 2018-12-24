@@ -21,7 +21,7 @@ export class LoginComponentComponent implements OnInit {
   };
 
     config = {
-        registrationUrl: 'registrationUrl',
+        loginUrl: 'login',
         textFile:  'textFile'
     };
 
@@ -31,7 +31,7 @@ export class LoginComponentComponent implements OnInit {
   }
 
     addUser(user: any[]) {
-        return this.http.post(this.config.registrationUrl, user, this.httpOptions);
+        return this.http.post(this.config.loginUrl, user, this.httpOptions);
     }
 
     login() {
